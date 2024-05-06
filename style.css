@@ -1,0 +1,47 @@
+body{
+
+    
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove preenchimento padrão */
+    min-height: 100vh; /* Garante que o corpo tenha pelo menos a altura da viewport */
+    display: flex; /* Utiliza flexbox para o layout */
+    flex-direction: column; /* Define a direção dos elementos filhos como coluna */
+
+}
+
+/* Define estilos para o conteúdo do site */
+.content {
+    flex: 1; /* Faz com que o conteúdo ocupe todo o espaço disponível no contêiner flexível (body) */
+}
+
+h1{
+    color: rgb(88, 88, 232);
+}
+
+.list-members li{
+
+    display: inline;
+}
+
+.header{
+
+    background-color: rgb(215, 234, 251);
+    padding: 2px;
+    text-align: center;
+   /* position: fixed;*/
+    width: 100%;
+
+    
+}
+
+
+.footer {
+    background-color:  rgba(88, 88, 232, 0.353);
+    padding: 20px;
+    text-align: center;
+    /*position: fixed;*/
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
