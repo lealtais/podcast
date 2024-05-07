@@ -13,10 +13,34 @@ body{
 /* Define estilos para o conteúdo do site */
 .content {
     flex: 1; /* Faz com que o conteúdo ocupe todo o espaço disponível no contêiner flexível (body) */
+    
+}
+/* texto com backgroud decorativo */
+
+.text-note{
+    /* define o tamanho da div */
+      background: url('img/sticky-note.png');
+      background-size: 100%;
+      max-width: 150vw;
+      width:670px;
+      height: 400px;
+      
+      /* faz o texto ficar no meio da imagem */
+     p{
+        font-size: 21px;
+        max-width: 200vw;
+        padding-top: 55px;
+        max-width: 380px;
+        padding-left: 150px;
+     }    
 }
 
 h1{
     color: rgb(88, 88, 232);
+}
+
+h2{
+    text-align: center;
 }
 
 .list-members li{
@@ -31,7 +55,7 @@ h1{
     text-align: center;
    /* position: fixed;*/
     width: 100%;
-
+    
     
 }
 
