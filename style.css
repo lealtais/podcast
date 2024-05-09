@@ -1,71 +1,233 @@
-body{
-
-    
+body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin: 0; /* Remove margens padrão */
-    padding: 0; /* Remove preenchimento padrão */
-    min-height: 100vh; /* Garante que o corpo tenha pelo menos a altura da viewport */
-    display: flex; /* Utiliza flexbox para o layout */
-    flex-direction: column; /* Define a direção dos elementos filhos como coluna */
-
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Define estilos para o conteúdo do site */
-.content {
-    flex: 1; /* Faz com que o conteúdo ocupe todo o espaço disponível no contêiner flexível (body) */
-    
-}
-/* texto com backgroud decorativo */
-
-.text-note{
-    /* define o tamanho da div */
-      background: url('img/sticky-note.png');
-      background-size: 100%;
-      max-width: 150vw;
-      width:670px;
-      height: 400px;
-      
-      /* faz o texto ficar no meio da imagem */
-     p{
-        font-size: 21px;
-        max-width: 200vw;
-        padding-top: 55px;
-        max-width: 380px;
-        padding-left: 150px;
-     }    
-}
-
-h1{
-    color: rgb(88, 88, 232);
-}
-
-h2{
-    text-align: center;
-}
-
-.list-members li{
-
-    display: inline;
-}
-
-.header{
-
-    background-color: rgb(215, 234, 251);
-    padding: 2px;
-    text-align: center;
-   /* position: fixed;*/
-    width: 100%;
-    
-    
-}
-
-
-.footer {
-    background-color:  rgba(88, 88, 232, 0.353);
+.header {
+    background-color: #1a1a1a;
     padding: 20px;
     text-align: center;
-    /*position: fixed;*/
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.header nav ul li a:hover {
+    color: #88f;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.img-content{
+        background-color: #8888FF ;
+        margin: 0;
+        width: 100%;
+        
+}
+.text-note {
+    
+   /* max-width: 670px; Largura máxima da div */
+   /* width: 100%;
+    height: 400px;
+    display: flex;*/
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px;
+    border-radius: px;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    overflow: hidden; /* Oculta o texto que ultrapassa os limites da div */
+}
+
+
+.text-note p {
+    font-size: 21px;
+    color: white;
+}
+
+.text-middle, .text-note {
+    padding-top: 50px;
+    font-size: 21px;
+    line-height: 1.4;
+    text-align: center; /* Centraliza o texto */
+    max-width: 800px; /* Limita a largura máxima do texto */
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+h1 {
+    color: #88f;
+}
+
+h2 {
+    text-align: center;
+}
+
+.list-members {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.list-members img {
+    margin: 0 10px;
+    height: 100px;
+    width: 100px;
+    border-radius: 20%;
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 10px black;
+}
+
+.list-members {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.list-members li {
+    position: relative; /* Define a posição relativa para que possamos posicionar o texto dentro */
+    list-style: none; /* Remove marcadores de lista */
+    margin: 10px; /* Ajusta o espaçamento entre os membros */
+}
+
+.list-members li::before {
+    content: ""; /* Adiciona um pseudo-elemento antes do conteúdo real */
+    position: absolute;
+    top: 0;
     left: 0;
-    bottom: 0;
     width: 100%;
+    height: 100%;
+    background-size: cover; /* Garante que a imagem cubra toda a área */
+    border-radius: 50%; /* Para imagens circulares */
+    z-index: -1; /* Coloca a imagem de fundo atrás do texto */
+}
+
+/* Exemplo de estilização para cada imagem de membro */
+.list-members li:nth-child(odd)::before {
+    background-image: url('img/artur-profile.png'); /* Define a imagem de fundo para membros ímpares */
+}
+
+.list-members li:nth-child(even)::before {
+    background-image: url('img/heitor-profile.png'); /* Define a imagem de fundo para membros pares */
+}
+
+/* Estilizações adicionais para o texto */
+.list-members li span {
+    position: relative;
+    z-index: 1; /* Garante que o texto fique sobre a imagem */
+    background-color: rgba(255, 255, 255, 0.7); /* Adiciona um fundo semitransparente ao texto */
+    padding: 5px 10px; /* Ajusta o espaçamento interno do texto */
+    border-radius: 5px; /* Adiciona bordas arredondadas ao texto */
+}
+
+.list-members img:hover {
+    transform: scale(1.1);
+}
+
+.footer {
+    background-color: #1a1a1a;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.table{
+ align-self: center;
+    left: 900px; 
+    bottom: 1px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #88f;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Adiciona cor de fundo alternada para linhas pares */
+}
+
+/* Efeito de embraquecimento nas células quando o mouse passa sobre elas */
+tr:hover td {
+    background-color: rgba(136, 136, 255, 0.5);
+    transition: background-color 0.3s ease; /* Adiciona uma transição suave */
+}
+
+/* Adiciona sombra e bordas arredondadas à tabela */
+table {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd; /* Adiciona bordas */
+}
+
+/* Ajusta o espaçamento dentro das células */
+th, td {
+    padding: 15px;
+}
+
+
+.link-container {
+    width: 50%;
+    margin-bottom: 10px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.link-container a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+}
+
+.link-container a:hover {
+
+    background-color: #f5f5f5;
 }
